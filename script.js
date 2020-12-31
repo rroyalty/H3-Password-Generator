@@ -17,10 +17,6 @@ function writePassword() {
   let pwLength = document.querySelector("#pwLength").innerHTML;
   let pwRandNum  = pwString.length;
 
-  console.log(pwString);
-  console.log(pwLength);
-  console.log(pwRandNum);
-
   let password = "";
   for(let i = 0; i < pwLength ; i++){
     let randNum = Math.floor(Math.random() * pwRandNum);
@@ -30,7 +26,6 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  console.log(password.length);
 }
 
 // Checks to verify that at least one selection is made for symbols. On fail, shows warnings on webpage and disables generate button.
