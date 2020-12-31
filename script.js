@@ -6,17 +6,31 @@ document.addEventListener('click', function (event) {
   }
 }, false);
 
-// Assignment Code
-// var generateBtn = document.querySelector("#generate");
-var pwLength = document.querySelector("#pwLength");
-
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
-  var password = pwLength.innerHTML;
-  var passwordText = document.querySelector("#password");
+  let pwArray = ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"]
+  let checkboxes = document.querySelectorAll('input[name=cbVal]');
+  for(let i = 0; i < 4; i++) {
+    if (checkboxes[i].checked === false) pwArray[i] = "";
+  }
+  let pwString = pwArray.join('');
+  let pwLength = document.querySelector("#pwLength").innerHTML;
+  let pwRandNum  = pwString.length;
+
+  console.log(pwString);
+  console.log(pwLength);
+  console.log(pwRandNum);
+
+  let password = "";
+  for(let i = 0; i < pwLength ; i++){
+    let randNum = Math.floor(Math.random() * pwRandNum);
+    password = password + pwString[randNum];
+  }  
+
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  console.log(password.length);
 }
 
 // Checks to verify that at least one selection is made for symbols. On fail, shows warnings on webpage and disables generate button.
