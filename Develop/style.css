@@ -121,11 +121,23 @@ button[disabled] {
 }
 
 p.hidden {
-  display: none;
+  visibility: hidden !important;
 }
 
 p.show {
   color: red;
+}
+
+div.hidden{
+  border-color: #c0c7cf00;
+  border-style: solid;
+  border-width: 2px;
+}
+
+div.show {
+  border-color: red;
+  border-style: solid;
+  border-width: 2px;
 }
 
 @media (max-width: 690px) {

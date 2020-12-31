@@ -24,7 +24,7 @@
         <div class="card-body">
           <form>
             <div class="d-flex row">
-              <label for="Length" class="form-label col-9">Select a password length: (8 to 128)</label>
+              <label for="pwLength" class="form-label col-9">Select a password length: (8 to 128)</label>
               <p class="col-3 d-flex justify-content-end">Length:&nbsp<span id="pwLength" class="d-flex">24</span></p>
             </div>
 
@@ -36,7 +36,7 @@
                 value="24" 
                 step="1"
                 tooltip="show" 
-                id="length"
+                id="pwLength"
                 oninput="document.getElementById('pwLength').innerHTML = this.value" />
 
             <div class="d-flex row">
@@ -44,7 +44,7 @@
               <p class="d-flex col-6 justify-content-end hidden">Choose at least one.</p>
             </div>
 
-            <div id="checkBoxSet" class="d-flex row">
+            <div id="checkBoxSet" class="d-flex row hidden">
                 <div class="d-flex col-3 justify-content-center form-check form-switch">
                   <input name="cbVal" class="form-check-input" type="checkbox" id="pwLC" checked>
                   <label class="form-check-label fs-6" for="pwLC">&nbsp&nbspLowercase</label>
@@ -58,7 +58,7 @@
                   <label class="form-check-label fs-6" for="pwNum">&nbsp&nbspNumbers</label>
                 </div>
                 <div class="d-flex col-3 justify-content-center form-check form-switch">
-                  <input name="cbVal" class="form-check-input" type="checkbox" id="pwSym" checked>
+                  <input name="cbVal" class="form-check-input" type="checkbox" id="pwSpec" checked>
                   <label class="form-check-label fs-6" for="pwSym">&nbsp&nbspSpecial</label>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="card-footer">
-          <button type="submit" id="generateBtn" class="btn btn-success">Generate Password</button>
+          <button type="button" id="generateBtn" class="btn btn-success">Generate Password</button>
           <textarea
             readonly
             id="password"
