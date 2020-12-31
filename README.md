@@ -1,1 +1,1 @@
-# H3-Password-Generator
+# H3-password-generator
