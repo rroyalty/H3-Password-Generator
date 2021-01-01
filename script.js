@@ -12,10 +12,10 @@ generateBtn.addEventListener("click", writePassword);
 // Password Generation function.
 function writePassword() {
 
-  // Static Password Array: Upper - Lower - Num - Symb
+  // Static Password Array: [0]Lower - [1]Upper - [2]Num - [3]Symb
   let pwArray = ["abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "0123456789", "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"];
 
-  // Password Checkbox Array
+  // Password Checkbox Array:
   let checkboxes = document.querySelectorAll('input[name=cbVal]');
 
   // If checkbox unchecked, sets corresponding array element to "".
@@ -39,15 +39,17 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-//End Password Generation Function
+// End Password Generation Function
+
+
 
 // Checks to verify that at least one selection is made for PW symbols. On fail, shows warnings on webpage and disables generate button. Was looking into using jQuery for this, but we haven't covered that yet and figured out a way to do it with regular JS.
 function validatePW() {
 
-  //Array of checked checkboxes.
+  // Array of checked checkboxes.
   let checkboxes = document.querySelectorAll('input[name=cbVal]:checked');
 
-  //If length of array = 0, Show validation warnings and disable button.
+  // If length of array = 0, Show validation warnings and disable button.
   if(checkboxes.length === 0) {
     let hidden = document.querySelectorAll(".hidden");
     hidden.forEach(elem => {
@@ -56,7 +58,7 @@ function validatePW() {
     });
     document.getElementById("generateBtn").disabled = true;
   
-  //If Length of array != 0, Hide validation warnings and enable button.
+  // If Length of array != 0, Hide validation warnings and enable button.
   } else {
     let show = document.querySelectorAll(".show");
     show.forEach(elem => {
@@ -66,4 +68,4 @@ function validatePW() {
     document.getElementById("generateBtn").disabled = false;
   }
 }
-//End validation.
+// End validation.
