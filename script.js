@@ -28,7 +28,6 @@ function writePassword() {
   let pwRandNum  = pwString.length;
   let pwLength = document.querySelector("#pwLength").innerHTML;
 
-
   // For User Selected PW length, select random element from pwString.
   let password = "";
   for(let i = 0; i < pwLength ; i++){
@@ -42,7 +41,7 @@ function writePassword() {
 }
 //End Password Generation Function
 
-// Checks to verify that at least one selection is made for symbols. On fail, shows warnings on webpage and disables generate button. Was looking into using jQuery for this, but we haven't covered that yet and figured out a way to do it with regular JS.
+// Checks to verify that at least one selection is made for PW symbols. On fail, shows warnings on webpage and disables generate button. Was looking into using jQuery for this, but we haven't covered that yet and figured out a way to do it with regular JS.
 function validatePW() {
 
   //Array of checked checkboxes.

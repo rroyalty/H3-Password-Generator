@@ -121,7 +121,7 @@ button[disabled] {
 }
 
 p.hidden {
-  visibility: hidden !important;
+  display: none !important;
 }
 
 p.show {
