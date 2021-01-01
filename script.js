@@ -6,7 +6,10 @@ document.addEventListener('click', function (event) {
   }
 }, false);
 
-// Write password to the #password input
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Password Generation function.
 function writePassword() {
 
   // Static Password Array: Upper - Lower - Num - Symb
@@ -20,25 +23,26 @@ function writePassword() {
     if (checkboxes[i].checked === false) pwArray[i] = "";
   }
 
-  // Variables for calculations.
+  // Variables for calculations. pwArray as String - Length of that String - User Selected Password Length
   let pwString = pwArray.join('');
-  let pwLength = document.querySelector("#pwLength").innerHTML;
   let pwRandNum  = pwString.length;
+  let pwLength = document.querySelector("#pwLength").innerHTML;
 
-  //For selected password length, select random element from pwString.
+
+  // For User Selected PW length, select random element from pwString.
   let password = "";
   for(let i = 0; i < pwLength ; i++){
     let randNum = Math.floor(Math.random() * pwRandNum);
     password = password + pwString[randNum];
   }  
 
+  // Insert password onto HTML document.
   let passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
-//End Password Generation
+//End Password Generation Function
 
-// Checks to verify that at least one selection is made for symbols. On fail, shows warnings on webpage and disables generate button.
+// Checks to verify that at least one selection is made for symbols. On fail, shows warnings on webpage and disables generate button. Was looking into using jQuery for this, but we haven't covered that yet and figured out a way to do it with regular JS.
 function validatePW() {
 
   //Array of checked checkboxes.
@@ -64,6 +68,3 @@ function validatePW() {
   }
 }
 //End validation.
-
-// Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
