@@ -12,22 +12,34 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <main class="wrapper container-fluid">
+
+      <!--Header-->
       <header>
         <h1>Password Generator</h1>
       </header>
 
-      <div class="card overflow-auto">
-        <div class="card-header text-center">
+      <!--Generate Password Card Element-->
+      <section class="card overflow-auto">
+
+        <!--Card Header-->
+        <header class="card-header text-center">
           <h4>Set Password Criteria</h4>
-        </div>
-        <div class="card-body">
+        </header>
+
+        <!--Password Parameters-->
+        <section class="card-body">
+          
+          <!--Begin Form-->
           <form>
+
+            <!--Password Length Header-->
             <div class="d-flex row">
               <label for="pwLength" class="form-label col-12 col-sm-9 text-center text-sm-start">Select a password length</label>
               <p class="col-12 col-sm-3 d-flex justify-content-center justify-content-sm-end">Length:&nbsp<span id="pwLength" class="d-flex">24</span></p>
             </div>
 
+            <!--Password length Slidebar-->
             <input 
                 type="range" 
                 class="form-range" 
@@ -39,10 +51,12 @@
                 id="pwLength"
                 oninput="document.getElementById('pwLength').innerHTML = this.value" />
 
+            <!--Password Character Selection Header-->
             <div class="d-flex row">
               <label for="checkBoxSet" class="form-label d-flex col-12 justify-content-center justify-content-sm-start">Select character set(s) to use:</label>
             </div>
 
+            <!--Password Character Selection Checkboxes-->
             <div id="checkBoxSet" class="d-flex row hidden">
                 <div class="d-flex col-6 col-sm-3 justify-content-center form-check form-switch">
                   <input name="cbVal" class="form-check-input" type="checkbox" id="pwLC" checked>
@@ -62,14 +76,21 @@
                 </div>
             </div>
           </form>
-          
+          <!--End Form-->
+
+          <!--Password Checkbox Validation Object. Hidden unless no character set selected.-->
           <div class="d-flex row">
             <p class="d-flex col-12 justify-content-center hidden m-1">Choose at least one.</p>
           </div>
-        </div>
+        </section>
 
-        <div class="card-footer">
+        <!--Card Footer-->
+        <footer class="card-footer">
+
+          <!--Generate Button-->
           <button type="button" id="generateBtn" class="btn btn-success">Generate Password</button>
+
+          <!--Textarea for newly generated password to populate.-->
           <textarea
             readonly
             class="overflow-auto"
@@ -77,9 +98,9 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
             onclick="this.select();"></textarea>
-        </div>
-      </div>
-    </div>
+        </footer>
+      </section>
+    </main>
 
     <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

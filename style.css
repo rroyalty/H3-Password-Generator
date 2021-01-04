@@ -1,3 +1,4 @@
+/* CSS provided by BootCamp */
 *,
 *::before,
 *::after {
@@ -119,7 +120,9 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+/* End CSS provided by BootCamp */
 
+/* Ryan's Validation CSS */
 p.hidden {
   display: none !important;
 }
@@ -139,6 +142,7 @@ div.show {
   border-style: solid;
   border-width: 2px;
 }
+/* End Ryan's Validation CSS */
 
 @media (max-width: 690px) {
   .btn {
